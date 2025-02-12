@@ -10,7 +10,20 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/backgroundGenerator.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			.color-picker-container {
+				display: flex;
+				gap: 10px;
+				align-items: center;
+				}
+			.css-background-container {
+				display: flex;
+				align-items: baseline;
+				gap: 10px;
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -22,6 +35,7 @@
 						<a href="#" class="icon solid fa-home"><span>Home</span></a>
 						<a href="#work" class="icon solid fa-folder"><span>Work</span></a>
 						<a href="#contact" class="icon solid fa-envelope"><span>Contact</span></a>
+						<a href="#css-background-generator" class="icon brands fa-css3-alt"><span>CSS Project</span></a>
 						<a href="https://www.linkedin.com/in/noah-jenkins" class="icon brands fa-linkedin" target="_blank"><span>LinkedIn</span></a>
 					</nav>
 
@@ -66,6 +80,24 @@
 								</section>
 							</article>
 
+							<!-- CSS Background Generator -->
+							<article id="css-background-generator" class="panel">
+								<header>
+									<h2>CSS Background Generator</h2>
+								</header>
+								<body id="gradient">
+									<div class="color-picker-container">
+										<h3>Pick 2 colors to change the background:</h3>
+										<input class="color1" type="color" name="color1" value="#fecb3e">
+										<input class="color2" type="color" name="color2" value="#ffb43f">
+									</div>
+									<div class="css-background-container">
+										<h3>Current CSS Background:</h3>
+										<p>CSS: <code id="css-gradient">linear-gradient(to right, #fecb3e, #ffb43f);</code></p>
+									</div>
+								</body>
+							</article>
+
 						<!-- Contact -->
 							<article id="contact" class="panel">
 								<header>
@@ -82,6 +114,8 @@
 
 					</div>
 
+					
+
 				<!-- Footer -->
 					<div id="footer">
 						<ul class="copyright">
@@ -92,6 +126,27 @@
 					<script>
 						document.getElementById('year').innerHTML = new Date().getFullYear();
 					</script>
+					<script>
+						document.addEventListener('DOMContentLoaded', (event) => {
+							const color1Input = document.querySelector('.color1');
+							const color2Input = document.querySelector('.color2');
+							const cssGradient = document.getElementById('css-gradient');
+
+							function updateGradient() {
+								const color1 = color1Input.value;
+								const color2 = color2Input.value;
+								const gradient = `linear-gradient(to right, ${color1}, ${color2})`;
+								cssGradient.textContent = gradient + ';';
+								document.getElementById('gradient').style.background = gradient;
+							}
+
+							color1Input.addEventListener('input', updateGradient);
+							color2Input.addEventListener('input', updateGradient);
+
+							updateGradient();
+						});
+					</script>
+
 
 			</div>
 
