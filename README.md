@@ -6,11 +6,8 @@
 
 ## Features
 
-### Home
-- Introduction to Noah Jenkins with a brief description and a link to see his work.
-
 ### About Me
-- Detailed information about Noah Jenkins, including his skills, certifications, and exams.
+- Detailed information about myself, including skills, certifications, and exams.
 
 ### CSS Background Generator
 - An interactive tool to generate CSS gradients by selecting two colors. The generated CSS is displayed and applied to the background in real-time.
