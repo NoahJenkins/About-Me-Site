@@ -9,6 +9,9 @@
 ### About Me
 - Detailed information about myself, including skills, certifications, and exams.
 
+### Voice Acting 
+- Features my character and commercial demo reel for voice acting. 
+
 ### CSS Background Generator
 - An interactive tool to generate CSS gradients by selecting two colors. The generated CSS is displayed and applied to the background in real-time.
 
