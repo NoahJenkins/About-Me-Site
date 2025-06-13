@@ -9,9 +9,13 @@
 		<title>noahjenkins.com</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="Personal portfolio website showcasing Noah Jenkins' work in voice acting and web development">
+		<meta name="theme-color" content="#000000">
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="assets/css/backgroundGenerator.css" />
 		<link rel="icon" href="images/icon.jpeg" type="image/jpeg">
+		<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+		<link rel="manifest" href="manifest.json">
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
 			.color-picker-container {
@@ -180,6 +184,22 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/pwa.js"></script>
+
+		<!-- PWA Service Worker Registration -->
+		<script>
+			if ('serviceWorker' in navigator) {
+				window.addEventListener('load', () => {
+					navigator.serviceWorker.register('/sw.js')
+						.then((registration) => {
+							console.log('ServiceWorker registration successful with scope: ', registration.scope);
+						})
+						.catch((error) => {
+							console.log('ServiceWorker registration failed: ', error);
+						});
+				});
+			}
+		</script>
 
 	</body>
 </html>

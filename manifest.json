@@ -1,0 +1,46 @@
+{
+  "name": "Noah Jenkins - Personal Portfolio",
+  "short_name": "Noah Jenkins",
+  "description": "Personal portfolio website showcasing Noah Jenkins' work in voice acting and web development",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "images/icon.jpeg",
+      "sizes": "64x64",
+      "type": "image/jpeg"
+    }
+  ],
+  "categories": ["portfolio", "business", "entertainment"],
+  "lang": "en-US",
+  "scope": "/",
+  "screenshots": [
+    {
+      "src": "images/screenshot-wide.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "images/screenshot-narrow.png", 
+      "sizes": "540x720",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ]
+}
