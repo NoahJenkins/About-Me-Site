@@ -21,6 +21,32 @@ To run tests in watch mode:
 npm run test:watch
 ```
 
+To run tests with coverage:
+
+```bash
+npm run test:coverage
+```
+
+For CI environments:
+
+```bash
+npm run test:ci
+```
+
+## GitHub Actions Integration
+
+Tests automatically run on:
+- **Every Pull Request** to `main`/`master` branches  
+- **Every Push** to `main`/`master` branches
+
+The GitHub Actions workflow:
+- Tests against Node.js versions 18.x and 20.x
+- Generates coverage reports
+- Uploads test artifacts  
+- Shows results in the PR/commit status
+
+See `.github/workflows/test.yml` for the full configuration.
+
 ## Test Coverage
 
 The tests cover:

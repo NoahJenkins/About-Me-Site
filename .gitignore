@@ -107,6 +107,7 @@ Thumbs.db
 
 # Jest coverage
 coverage/
+*.lcov
 
 # Build output
 dist/
