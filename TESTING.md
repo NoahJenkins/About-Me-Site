@@ -2,6 +2,11 @@
 
 This project includes Jest tests for the `setgradient` function in `backgroundGenerator.ts`.
 
+## Test Structure
+
+Tests are organized in the `tests/` directory:
+- `tests/backgroundGenerator.test.ts` - Tests for the background gradient generator function
+
 ## Running Tests
 
 To run the tests:
