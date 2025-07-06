@@ -13,6 +13,7 @@ jobs:
     strategy:
       matrix:
         node-version: [18.x, 20.x]
+      fail-fast: false  # Don't cancel other jobs if one fails
     
     steps:
     - name: Checkout code
@@ -30,10 +31,10 @@ jobs:
     - name: Run tests
       run: npm run test:ci
       
-    - name: Upload test results
-      if: always()
-      uses: actions/upload-artifact@v3
+    - name: Upload test coverage
+      if: always() && hashFiles('coverage/**') != ''
+      uses: actions/upload-artifact@v4
       with:
-        name: test-results-node-${{ matrix.node-version }}
+        name: test-coverage-node-${{ matrix.node-version }}
         path: coverage/
         retention-days: 30
