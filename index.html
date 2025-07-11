@@ -66,26 +66,9 @@
 								<header>
 									<h2>About Me</h2>
 								</header>
-								<p>
-									Noah Jenkins is a Cloud Engineer with expertise in Azure, IAM, SSO implementation, and automating identity lifecycle processes. Proven success in improving operational efficiency and compliance with SOX standards. Adept at scripting and Infrastructure as Code to drive scalable, secure, and automated solutions.
-								</p>
-								<section>
-									<h3>Skills:</h3>
-									<ul>
-										<li><strong>Azure:</strong> Azure Active Directory/Entra ID, PIM, RBAC, Intune, Sentinel, Azure Hybrid, KQL</li>
-										<li><strong>AWS:</strong>  EC2, S3, VPC, IAM Admin, CloudWatch</li>
-										<li><strong>Security:</strong> IAM, Identity Governance, SAML, OAuth, SIEM, Network Security, MDM</li>
-										<li><strong>Automation:</strong> PowerShell, Terraform, Bicep, Logic Apps, Power Automate</li>
-										<li><strong>Front End:</strong> JavaScript, React.JS</li>
-										<li><strong>Backend:</strong> Python, Node JS, Express JS, Postgres, SQL</li>
-									</ul>
-									<h3>Certifications & Exams:</h3>
-									<ul>
-										<li><strong>Security:</strong> CompTIA Sec+, ISC2 CC</li>
-										<li><strong>Cloud:</strong> Azure Administrator (AZ 104), Azure Identity and Access Administrator (SC 300), Terraform Associate (HCTA 003), AWS Cloud Practitioner (AWS CCP)</li>
-										<li><strong>Microsoft Fundamentals:</strong>  Azure (AZ 900), Security and Compliance (SC 900), Data (DP 900), Microsoft 365 (MS 900), Power Platform (PL 900), GitHub Foundations</li>
-									</ul>
-								</section>
+								<div id="about-readme-content">
+									Loading latest GitHub profile info...
+								</div>
 							</article>
 
 						<!-- Voice Over Acting -->
@@ -173,6 +156,26 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/pwa.js"></script>
+			<!-- Marked.js for Markdown parsing -->
+			<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+			<script>
+				document.addEventListener('DOMContentLoaded', function () {
+					const readmeContainer = document.getElementById('about-readme-content');
+					const githubReadmeUrl = 'https://raw.githubusercontent.com/noahjenkins/noahjenkins/main/README.md';
+
+					fetch(githubReadmeUrl)
+						.then(response => {
+							if (!response.ok) throw new Error('Failed to fetch README');
+							return response.text();
+						})
+						.then(markdown => {
+							readmeContainer.innerHTML = marked.parse(markdown);
+						})
+						.catch(error => {
+							readmeContainer.innerHTML = 'Unable to load GitHub profile info at this time.';
+						});
+				});
+			</script>
 
 		<!-- PWA Service Worker Registration -->
 		<script>
